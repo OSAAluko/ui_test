@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+// import 'package:flutter/services.dart';
+// import 'package:number_display/number_display.dart';
+
+
 
 
 Color darkGreen = const Color.fromRGBO(12,62,34, 125);
@@ -47,10 +52,22 @@ class _MyProfilePageState extends State<MyProfilePage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 Text('My Profile', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17)),
-                                Icon(
-                                  Icons.qr_code,
-                                  size: 30,
-                                  color: Colors.white,)
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                    shape:BoxShape.rectangle,
+                                    borderRadius: BorderRadius.all(Radius.circular(10.0),
+                                    ),
+                                    border: Border.all(
+                                      color: Colors.white12,
+                                    ),
+                                  ),
+                                  child: Icon(
+                                    Icons.qr_code,
+                                    size: 30,
+                                    color: Colors.white,),
+                                )
                               ],
                             ),
                             SizedBox(
@@ -99,10 +116,13 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Stack(
+                              clipBehavior: Clip.none,
+                              fit: StackFit.loose,
                               children: <Widget>[
                                 Positioned(
                                   left: 30,
                                   right: 30,
+                                  bottom: 1,
                                   child: Container(
                                     height: 200,
                                     width: 300,
@@ -120,6 +140,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 Positioned(
                                   left: 20,
                                   right: 20,
+                                  bottom: 1,
                                   child: Container(
                                     height: 175,
                                     width: 325,
@@ -144,15 +165,31 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                         Expanded(
                                           flex: 1,
                                             child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.start,
+                                                crossAxisAlignment: CrossAxisAlignment.center,
                                                 children: <Widget>[
+                                                  SizedBox(
+                                                    width: 20,
+                                                  ),
                                                   Text('Balance', style: TextStyle(color: Colors.white70),),
+                                                  SizedBox(
+                                                    width: 180,
+                                                  )
                                                 ] )),
 
                                         Expanded(
                                             flex: 1,
                                             child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.start,
+                                                crossAxisAlignment: CrossAxisAlignment.center,
                                                 children: <Widget>[
-                                                  Text('\$30,750.00', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),),
+                                                  SizedBox(
+                                                    width: 20,
+                                                  ),
+                                                  Text('\$30750.00', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),),
+                                                  SizedBox(
+                                                    width: 100,
+                                                  )
                                                 ] )),
                                         SizedBox(
                                           height: 10,
@@ -161,11 +198,39 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                         Expanded(
                                           flex: 3,
                                           child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.end,
                                             children: <Widget>[
+                                              Row(
+                                                children: <Widget>[
+                                                  SizedBox(
+                                                    width: 20,
+                                                  ),
+                                                  Icon(Icons.credit_card, size: 30, color: Colors.white,),
+                                                ],
+                                              ),
 
-                                              Text('... ... ... ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white)),
-                                              Text('3765', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white))
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+
+                                              Text('.... ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white)),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+
+                                              Text('.... ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white)),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+
+                                              Text('.... ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white)),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+
+                                              Text('3765', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white)),
+
                                             ],
                                           ),
                                         )
@@ -243,7 +308,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           ),
                         ),
                         SizedBox(
-                          height: 30,
+                          height: 50,
                         )
 
                   ],
@@ -258,7 +323,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
         onPressed: null,
         child: Icon(Icons.camera),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
 
       bottomNavigationBar: BottomAppBar(
         elevation: 0.0,
@@ -276,7 +341,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     width: 15,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 30),
+                    padding: const EdgeInsets.only(bottom: 21),
                     child: IconButton(
                       icon: Icon(
                         Icons.house_outlined,
@@ -291,7 +356,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     width: 30,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 30),
+                    padding: const EdgeInsets.only(bottom: 21),
                     child: IconButton(
                       icon: Icon(
                         Icons.bar_chart_outlined,
@@ -310,7 +375,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 30),
+                    padding: const EdgeInsets.only(bottom: 21),
                     child: IconButton(
                       icon: Icon(
                           Icons.add_alert_outlined,
@@ -324,7 +389,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     width: 30,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 30),
+                    padding: const EdgeInsets.only(bottom: 21),
                     child: IconButton(
                       icon: Icon(
                         Icons.person,
@@ -351,7 +416,6 @@ class _MyProfilePageState extends State<MyProfilePage> {
 
     );
   }
-
 
 }
 
@@ -384,4 +448,3 @@ class ProfileMenuWidget extends StatelessWidget {
   }
 
 }
-
