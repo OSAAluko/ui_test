@@ -1,17 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-// import 'package:flutter/services.dart';
-// import 'package:number_display/number_display.dart';
 
 
-
-
-Color darkGreen = const Color.fromRGBO(12,62,34, 125);
-Color darkerGreen = const Color.fromRGBO(11,55,32,255);
-Color lightGreen = const Color.fromRGBO(71,181,101,125);
-Color gold = const Color.fromRGBO(217,154,75,125);
-Color lightGold = const Color.fromRGBO(211,185,115,255);
+// Color darkGreen = const Color.fromRGBO(12,62,34, 0.9);
+// Color darkerGreen = const Color.fromRGBO(11,55,32, 0.9);
+// Color lightGreen = const Color.fromRGBO(71,181,101,125);
+// Color gold = const Color.fromRGBO(217,154,75,125);
+// Color lightGold = const Color.fromRGBO(211,185,115,255);
 
 
 class MyProfilePage extends StatefulWidget {
@@ -132,7 +128,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                         topLeft: Radius.circular(30.0),
                                         topRight: Radius.circular(30.0),
                                       ),
-                                      color: Colors.green.withOpacity(0.5),
+                                      color: Color.fromRGBO(11,55,32,0.9),
+                                      // color: Colors.green.withOpacity(0.5),
                                     ),
 
                                 ),
@@ -150,7 +147,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                         topLeft: Radius.circular(30.0),
                                         topRight: Radius.circular(30.0),
                                       ),
-                                          color: Colors.yellow.withOpacity(0.5),
+                                          color: Color.fromRGBO(217,154,75, 0.9),
+                                          // color: Colors.yellow.withOpacity(0.5),
                                       )
 
                                   ),
@@ -158,6 +156,17 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 Positioned(
 
                                   child: Container(
+                                    height: 150,
+                                    width: 350,
+                                    decoration: BoxDecoration(
+                                      shape:BoxShape.rectangle,
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(30.0),
+                                        topRight: Radius.circular(30.0),
+                                      ),
+                                      color: Colors.green,
+                                      // color: Colors.lightGreen.withOpacity(0.5),
+                                    ),
                                     padding: EdgeInsets.all(10.0),
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.start,
@@ -235,16 +244,6 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                           ),
                                         )
                                       ],
-                                    ),
-                                    height: 150,
-                                    width: 350,
-                                    decoration: BoxDecoration(
-                                      shape:BoxShape.rectangle,
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(30.0),
-                                        topRight: Radius.circular(30.0),
-                                      ),
-                                      color: Colors.lightGreen.withOpacity(0.5),
                                     ),
 
                                   ),
